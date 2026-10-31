@@ -28,18 +28,18 @@
     <string name="WrongNumberFormat">Wrong format</string>
     <string name="ShortNumberInfo">The number you provided is too short for **%1$s**:\n\n**%2$s**\n\nPlease enter the correct number including your country code.</string>
     <string name="EditNumber">Edit number</string>
-    <string name="DidNotGetTheCodeInfo">If you didn\'t get the code by SMS or call, please check your **cellular data settings** and phone number:\n\n**%1$s**\n\nTry again or contact VGRAM Private support. Tap **Help** to send technical details.</string>
+    <string name="DidNotGetTheCodeInfo">If you didn\'t receive a code from the VGRAM Private bot, make sure you started the bot and entered the virtual number it issued:\n\n**%1$s**\n\nTry again or contact VGRAM Private support. Tap **Help** to send technical details.</string>
     <string name="DidNotGetTheCodeHelpButton">Help</string>
     <string name="DidNotGetTheCodeEditNumberButton">Edit number</string>
     <!--code enter view-->
     <string name="YourCode">Phone verification</string>
     <string name="SentSmsCode">We’ve sent a sign-in code to the VGRAM Private bot for **%1$s**.</string>
-    <string name="SentAppCode">We\'ve sent the code to the **VGRAM Private** app on your other device.</string>
-    <string name="SentAppCodeWithPhone">We\'ve sent the code to the **VGRAM Private** app for %1$s on your other device.</string>
-    <string name="SentAppCodeTitle">Check your VGRAM Private messages</string>
-    <string name="SentFragmentCode">Get the code for %1$s in the Anonymous Numbers section on Fragment.</string>
+    <string name="SentAppCode">Your code has been delivered to your VGRAM Private bot.</string>
+    <string name="SentAppCodeWithPhone">Your code for %1$s has been delivered to your VGRAM Private bot.</string>
+    <string name="SentAppCodeTitle">Check your VGRAM Private bot</string>
+    <string name="SentFragmentCode">Get the code for %1$s from your VGRAM Private bot.</string>
     <string name="SentSmsCodeTitle">Enter code</string>
-    <string name="OpenFragment">Open Fragment</string>
+    <string name="OpenFragment">Open VGRAM bot</string>
     <string name="SentCallCode">Your sign-in code is being delivered by the VGRAM Private bot for **%1$s**.</string>
     <string name="SentCallOnly">Check the VGRAM Private bot for the code for **%1$s**.</string>
     <string name="CallText">Check the VGRAM Private bot for your code in %1$d:%2$02d</string>
@@ -51,7 +51,7 @@
     <string name="WrongCode">You entered the wrong code. Please try again.</string>
     <string name="DidNotGetTheCode">Didn\'t get the code?</string>
     <string name="DidNotGetTheCodeSms">Request a new code from the VGRAM bot</string>
-    <string name="DidNotGetTheCodeFragment">Get a code via Fragment</string>
+    <string name="DidNotGetTheCodeFragment">Get a code from the VGRAM bot</string>
     <string name="CancelAccountReset">Cancel account reset</string>
     <string name="CancelAccountResetInfo2">Somebody with access to **%1$s** has requested to delete your VGRAM Private account and reset your 2-Step Verification password.\n\nIf this wasn\'t you, enter the code we\'ve sent to your VGRAM Private bot. You can also cancel this by *contacting support*.</string>
     <string name="ResetAccount">Reset account</string>
