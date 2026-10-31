@@ -5,7 +5,7 @@ A self-hosted Android messenger client based on the OwpenGram / Telegram for And
 - Android minimum version: 5.0+ (the target test device is Android 12).
 - MTProto API layer: 229.
 - Build flavor: `:TMessagesProj_AppStandalone:assembleAfatDebug`.
-- Application ID: `com.vgram.private`.
+- Application ID: `com.vgram.privateapp`.
 - Display name: **VGRAM Private**.
 
 ## Current integration state
