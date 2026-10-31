@@ -28,7 +28,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 public class OwpengramServers {
 
-    private static final String PREFS_NAME = "owpengram_servers";
+    private static final String PREFS_NAME = "vgram_private_servers";
     private static final String KEY_CUSTOM_SERVERS = "custom_servers";
     private static final String KEY_ACCOUNT_SERVER = "account_server_";
     // Built-in servers are rebuilt from compile-time constants by
@@ -37,11 +37,11 @@ public class OwpengramServers {
     // back into. This holds those cosmetic overrides, keyed by server id.
     private static final String KEY_BUILTIN_IDENTITY = "builtin_identity";
 
-    public static final String ID_OWPENGRAM = "owpengram";
+    public static final String ID_OWPENGRAM = "vgram-private";
     public static final String ID_TELEGRAM  = "telegram";
 
     /** Public repository of the OwpenGram server, opened from the settings entry. */
-    public static final String SERVER_REPO_URL = "https://github.com/owpengram/owpengram-server";
+    public static final String SERVER_REPO_URL = "https://github.com/ramzilzokirov-lgtm/owpengram-server";
 
     // Fired whenever the stored custom-server list changes (add/update/remove,
     // from ANY code path -- including one triggered from outside the
@@ -60,19 +60,11 @@ public class OwpengramServers {
         customServersChangedListeners.remove(listener);
     }
 
-    private static final String DEFAULT_HOST = "152.89.254.50";
+    private static final String DEFAULT_HOST = "vgram-private.invalid";
     private static final int    DEFAULT_PORT = 2398;
 
-    // OwpenGram's own production server RSA key.
-    static final String OWPENGRAM_RSA_KEY =
-        "-----BEGIN RSA PUBLIC KEY-----\n" +
-        "MIIBCgKCAQEAxUi0fsjiop7kTI+c+ATHwIs+XPcircj9WL/tNASH45/phiIvxhPU\n" +
-        "z4T6OgUfDVpQEC8SWCuq77aZAhnpZ0rfQ+h6vEv7X970wIAPT/hbyzekyWEFmH5Q\n" +
-        "RxSPrOMKF/V0wuTOVJcoHZW5r5cK7xsVe/otdYdOgt67kITS7pqoO1BlstRuOEHL\n" +
-        "jhaJ/40dXocrWpDQlJP2TZFwk5JF1Pbx/2mLr/asQapc/qbQP82b+iDLW8QIBT0f\n" +
-        "+xi4Js4k7Qo9kZSuUHUCDzmJt6Z0USBxxp/tSZRVjWRaT9ORDrdyfb/mKFSt9BtC\n" +
-        "B5VRJ1e0q7P/9/w21T0p9uV3eNXhnPnLFQIDAQAB\n" +
-        "-----END RSA PUBLIC KEY-----";
+    // VGRAM server key is fetched from the configured host's /owpengram/server-info endpoint.
+    static final String OWPENGRAM_RSA_KEY = "";
     // fingerprint == 0 -> native layer derives it from the PEM (see ConnectionsManager::applyServerConfig).
     static final long OWPENGRAM_RSA_FINGERPRINT = 0;
 
@@ -93,8 +85,8 @@ public class OwpengramServers {
     public static OwpengramServer owpengramServer() {
         OwpengramServer s = new OwpengramServer();
         s.id                 = ID_OWPENGRAM;
-        s.name               = "OwpenGram";
-        s.description        = "This is a test OwpenGram server.";
+        s.name               = "VGRAM Private";
+        s.description        = "Your private VGRAM server. Deployment is being prepared.";
         s.host               = DEFAULT_HOST;
         s.port               = DEFAULT_PORT;
         s.isOfficial         = true;
@@ -103,9 +95,7 @@ public class OwpengramServers {
         s.mainDcId           = 1;
         s.rsaPublicKey       = OWPENGRAM_RSA_KEY;
         s.rsaKeyFingerprint  = OWPENGRAM_RSA_FINGERPRINT;
-        // Whatever the operator has since set on the server itself wins over
-        // the shipped defaults -- see refreshServersInfo(). Only name,
-        // description and logo: host/port/key above stay compiled-in.
+        // Server identity is refreshed from the configured VGRAM host when it is deployed.
         applyBuiltinIdentity(s);
         return s;
     }
@@ -130,7 +120,6 @@ public class OwpengramServers {
 
     public static List<OwpengramServer> listServers() {
         List<OwpengramServer> result = new ArrayList<>();
-        result.add(telegramServer());
         result.add(owpengramServer());
         result.addAll(loadCustomServers());
         return result;
